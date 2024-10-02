@@ -1,13 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="chrome://global/skin/icons/experiments.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planet Shooter</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="chrome://global/skin/icons/experiments.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Planet Shooter</title>
+	</head>
+	<body>
+		<div id="app">
+			<canvas id="gameCanvas"></canvas>
+			<div id="hud">
+				<span id="score">Score: 0</span>
+				<span id="life">Life: 0</span>
+			</div>
+		</div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>
