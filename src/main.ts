@@ -2,4 +2,4 @@ import "./style.css";
 import { initGame } from "./game";
 
 const k = initGame();
-k.go("game");
+k.go("start");

@@ -3,6 +3,7 @@ import { GAME_WIDTH, GAME_HEIGHT } from "./config";
 import { gameScene } from "./scenes/gameScene";
 import { GameContext } from "./types/gameContext";
 import { gameOverScene } from "./scenes/gameOverScene";
+import { startScene } from "./scenes/startScene";
 
 export function initGame(): KaboomCtx {
 	const k = kaboom({
@@ -27,6 +28,7 @@ export function initGame(): KaboomCtx {
 	k.loadSprite("venus", "/sprites/venus.png");
 
 	// Add scenes
+	k.scene("start", () => startScene(k));
 	k.scene("game", () => gameScene(k));
 	k.scene("gameOver", gameOverScene(k));
 
