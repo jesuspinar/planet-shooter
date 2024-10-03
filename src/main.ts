@@ -1,5 +1,4 @@
-import "./style.css";
+import { initGame } from "./game";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div></div>
-`;
+const k = initGame();
+k.go("game");
