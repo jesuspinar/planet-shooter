@@ -16,7 +16,7 @@ export function initGame(): KaboomCtx {
 	// Load assets
 	k.loadSprite("planet", "/sprites/n97.png");
 	k.loadSprite("ufo", "/sprites/ufo.png");
-	k.loadSprite("background", "/sprites/space-background.webp");
+	k.loadSprite("background", "/sprites/background.png");
 	k.loadSprite("earth", "/sprites/earth.png");
 	k.loadSprite("jupiter", "/sprites/jupiter.png");
 	k.loadSprite("mars", "/sprites/mars.png");
