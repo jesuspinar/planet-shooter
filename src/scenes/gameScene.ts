@@ -39,14 +39,15 @@ export function gameScene(k: GameContext) {
 	// Handle clicks
 	k.onClick("planet", (p: GameObj) => {
 		k.destroy(p);
-		k.score.value += p.value;
-		k.score.text = `Score: ${k.score.value}`;
 		if (p.value < 0) {
-			k.life.value += p.value;
-			k.life.text = `Life: ${k.life.value}`;
 			if (k.life.value <= 0) {
 				k.go("gameOver", k.score.value);
 			}
+			k.life.value += p.value;
+			k.life.text = `Life: ${k.life.value}`;
+		} else {
+			k.score.value += p.value;
+			k.score.text = `Score: ${k.score.value}`;
 		}
 	});
 
@@ -54,7 +55,7 @@ export function gameScene(k: GameContext) {
 		k.destroy(u);
 		k.score.value += u.value * 2;
 		k.score.text = `Score: ${k.score.value}`;
-    missedPlanets = 0;
+		missedPlanets = 0;
 	});
 
 	// Destroy objects that go off screen
