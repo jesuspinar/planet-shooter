@@ -1,10 +1,22 @@
 import { createPlanet } from "../objects/planet";
 import { createUFO } from "../objects/ufo";
-import { PLANET_TYPES, PLANET_SPAWN_TIME, UFO_SPAWN_TIME, INITIAL_LIFE } from "../config";
+import {
+	PLANET_TYPES,
+	PLANET_SPAWN_TIME,
+	UFO_SPAWN_TIME,
+	INITIAL_LIFE,
+	INITIAL_UFO_SPEED,
+	INITIAL_PLANET_SPEED,
+	PLANET_SPEED_INCREMENT,
+	UFO_SPEED_INCREMENT,
+} from "../config";
 import { GameContext } from "../types/gameContext";
 import { GameObj } from "kaboom";
 
 export function gameScene(k: GameContext) {
+	let missedPlanets = 0;
+	let planetSpeed = INITIAL_PLANET_SPEED;
+	let ufoSpeed = INITIAL_UFO_SPEED;
 	// Add background
 	k.add([k.sprite("background"), k.pos(0, 0), k.scale(3)]);
 
@@ -17,11 +29,11 @@ export function gameScene(k: GameContext) {
 	// Spawn objects
 	k.loop(PLANET_SPAWN_TIME, () => {
 		const planetType = k.choose(PLANET_TYPES);
-		createPlanet(k, k.vec2(k.rand(0, k.width()), 0), planetType);
+		createPlanet(k, k.vec2(k.rand(0, k.width()), 0), planetType, (planetSpeed += PLANET_SPEED_INCREMENT));
 	});
 
 	k.loop(UFO_SPAWN_TIME, () => {
-		createUFO(k, k.vec2(k.rand(0, k.width()), 0));
+		createUFO(k, k.vec2(k.rand(0, k.width()), 0), (ufoSpeed += UFO_SPEED_INCREMENT));
 	});
 
 	// Handle clicks
@@ -42,12 +54,26 @@ export function gameScene(k: GameContext) {
 		k.destroy(u);
 		k.score.value += u.value * 2;
 		k.score.text = `Score: ${k.score.value}`;
+    missedPlanets = 0;
 	});
 
 	// Destroy objects that go off screen
 	const destroyOffscreen = (obj: GameObj) => {
 		if (obj.pos.y > k.height()) {
 			k.destroy(obj);
+
+			if (obj.is("planet")) {
+				missedPlanets += 1;
+				if (missedPlanets === 3) {
+					k.life.value -= 1;
+					k.life.text = `Life: ${k.life.value}`;
+					missedPlanets = 0;
+
+					if (k.life.value <= 0) {
+						k.go("gameOver", k.score.value);
+					}
+				}
+			}
 		}
 	};
 

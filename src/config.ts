@@ -1,11 +1,16 @@
 import { PlanetType } from "./types/planetType";
-
+// UI
 export const GAME_WIDTH = 800;
 export const GAME_HEIGHT = 600;
-export const PLANET_SPEED = 120;
-export const UFO_SPEED = 180;
+// SPEED
+export const INITIAL_PLANET_SPEED = 120;
+export const INITIAL_UFO_SPEED = 180;
+export const PLANET_SPEED_INCREMENT = 12;
+export const UFO_SPEED_INCREMENT = 18;
+// SPAWN TIME
 export const PLANET_SPAWN_TIME = 1.5;
 export const UFO_SPAWN_TIME = 3;
+// LIFE
 export const INITIAL_LIFE = 3;
 
 export const PLANET_TYPES: PlanetType[] = [
