@@ -9,7 +9,7 @@ export function createPlanet(k: GameContext, pos: Vec2, type: PlanetType): GameO
 		k.sprite(type.sprite),
 		k.pos(pos),
 		k.area(),
-		k.scale(0.1),
+		k.scale(type.scale),
 		k.color(k.rgb(type.color[0], type.color[1], type.color[2])),
 		k.move(k.DOWN, PLANET_SPEED),
 		"planet",
