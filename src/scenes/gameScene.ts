@@ -6,7 +6,7 @@ import { GameObj } from "kaboom";
 
 export function gameScene(k: GameContext) {
 	// Add background
-	k.add([k.sprite("background"), k.scale(k.width() / 240, k.height() / 240)]);
+	k.add([k.sprite("background"), k.pos(0, 0), k.scale(1)]);
 
 	// Add score
 	k.score = k.add([k.text("Score: 0"), k.pos(10, 10), { value: 0 }]) as GameContext["score"];
