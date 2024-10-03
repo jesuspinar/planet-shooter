@@ -1,6 +1,6 @@
 # Planet Shooter
 
-[**Planet Shooter**](https://jesuspinar.com/planet-shooter) is a simple, single-player browser-based shooter game where players click on planets to gain points. As the game progresses, objects drop faster, challenging the player's reflexes and precision.
+**Planet Shooter** is a simple, single-player browser-based shooter game where players click on planets to gain points. As the game progresses, objects drop faster, challenging the player's reflexes and precision.
 
 ## 🕹️ Gameplay
 
