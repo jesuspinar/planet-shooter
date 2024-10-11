@@ -6,7 +6,7 @@ import kaplay, { KAPLAYCtx } from "kaplay"
 
 export function initGame(): KAPLAYCtx {
   const k = kaplay({
-    scale: 1.5,
+    scale: 2.5,
     background: [0, 0, 0]
   }) as GameContext
 
