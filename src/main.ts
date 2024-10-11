@@ -11,17 +11,15 @@ export function initGame(): KAPLAYCtx {
   }) as GameContext
 
   // Load assets
-  k.loadSprite("planet", "/sprites/n97.png")
-  k.loadSprite("ufo", "/sprites/ufo.png")
-  k.loadSprite("background", "/sprites/background.png")
-  k.loadSprite("earth", "/sprites/earth.png")
-  k.loadSprite("jupiter", "/sprites/jupiter.png")
-  k.loadSprite("mars", "/sprites/mars.png")
-  k.loadSprite("mercury", "/sprites/mercury.png")
-  k.loadSprite("neptune", "/sprites/neptune.png")
-  k.loadSprite("saturn", "/sprites/saturn.png")
-  k.loadSprite("uranus", "/sprites/uranus.png")
-  k.loadSprite("venus", "/sprites/venus.png")
+  k.loadSprite("ufo", "/planet-shooter/sprites/ufo.png")
+  k.loadSprite("earth", "/planet-shooter/sprites/earth.png")
+  k.loadSprite("jupiter", "/planet-shooter/sprites/jupiter.png")
+  k.loadSprite("mars", "/planet-shooter/sprites/mars.png")
+  k.loadSprite("mercury", "/planet-shooter/sprites/mercury.png")
+  k.loadSprite("neptune", "/planet-shooter/sprites/neptune.png")
+  k.loadSprite("saturn", "/planet-shooter/sprites/saturn.png")
+  k.loadSprite("uranus", "/planet-shooter/sprites/uranus.png")
+  k.loadSprite("venus", "/planet-shooter/sprites/venus.png")
 
   // Add scenes
   k.scene("start", () => startScene(k))
