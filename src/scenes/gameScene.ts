@@ -22,7 +22,7 @@ export function gameScene(k: GameContext) {
   k.score = k.add([k.text("Score: 0"), k.pos(10, 10), { value: 0 }]) as GameContext["score"]
 
   // Add life
-  k.life = k.add([k.text(`Life: ${INITIAL_LIFE}`), k.pos(10, 40), { value: INITIAL_LIFE }]) as GameContext["life"]
+  k.life = k.add([k.text(`Life: ${INITIAL_LIFE}`), k.pos(10, 50), { value: INITIAL_LIFE }]) as GameContext["life"]
 
   // Spawn objects
   k.loop(PLANET_SPAWN_TIME, () => {
