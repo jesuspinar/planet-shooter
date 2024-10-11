@@ -9,6 +9,8 @@ import {
   INITIAL_PLANET_SPEED,
   PLANET_SPEED_INCREMENT,
   UFO_SPEED_INCREMENT,
+  MARGIN_L,
+  MARGIN_R
 } from "../config"
 import { GameContext } from "../types/gameContext"
 import { GameObj } from "kaplay"
@@ -27,11 +29,13 @@ export function gameScene(k: GameContext) {
   // Spawn objects
   k.loop(PLANET_SPAWN_TIME, () => {
     const planetType = k.choose(PLANET_TYPES)
-    createPlanet(k, k.vec2(k.rand(0, k.width()), 0), planetType, (planetSpeed += PLANET_SPEED_INCREMENT))
+    const xPos = k.rand(MARGIN_L, k.width() - MARGIN_R)
+    createPlanet(k, k.vec2(xPos, 0), planetType, (planetSpeed += PLANET_SPEED_INCREMENT))
   })
 
   k.loop(UFO_SPAWN_TIME, () => {
-    createUFO(k, k.vec2(k.rand(0, k.width()), 0), (ufoSpeed += UFO_SPEED_INCREMENT))
+    const xPos = k.rand(MARGIN_L, k.width() - MARGIN_R)
+    createUFO(k, k.vec2(xPos, 0), (ufoSpeed += UFO_SPEED_INCREMENT))
   })
 
   // Handle clicks
@@ -71,7 +75,6 @@ export function gameScene(k: GameContext) {
           k.go("gameOver", k.score.value)
         }
       }
-
     }
   }
 

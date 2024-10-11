@@ -4,6 +4,8 @@ export const INITIAL_PLANET_SPEED = 120
 export const INITIAL_UFO_SPEED = 180
 export const PLANET_SPEED_INCREMENT = 12
 export const UFO_SPEED_INCREMENT = 18
+export const MARGIN_L = 60
+export const MARGIN_R = MARGIN_L * 1.5
 // SPAWN TIME
 export const PLANET_SPAWN_TIME = 1.5
 export const UFO_SPAWN_TIME = 3
