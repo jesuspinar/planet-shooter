@@ -21,11 +21,18 @@ export function gameOverScene(k: GameContext) {
     // Restart button
     const restartButton = k.add([
       k.text("Restart?", { size: 32 }),
-      k.area({ cursor: "pointer" }),
+      k.area(),
       k.pos(k.width() / 2, k.height() / 2 + 30),
       k.anchor("center"),
       { isStartButton: true },
     ])
+
+    restartButton.onHoverUpdate(() => {
+      k.setCursor("pointer")
+    })
+    restartButton.onHoverEnd(() => {
+      k.setCursor("default")
+    })
 
     restartButton.onClick(() => k.go("game"))
   }
