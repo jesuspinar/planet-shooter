@@ -19,7 +19,7 @@
 
 - **WebGL**: For rendering game objects.
 - **TypeScript**: The primary language for game logic.
-- **Kaboom**: A game programming library.
+- **Kaplay.js**: A game programming library.
 
 ## 🚀 Future Improvements
 
