@@ -24,7 +24,7 @@ export const StartScene = (k: GameContext): SceneDef => {
     )
     startButton.add(
       [
-        k.text("Start", { size: startButtonSize }),
+        k.text("START", { size: startButtonSize }),
         k.anchor("center"),
         k.color(0, 0, 0),
       ]
