@@ -8,7 +8,7 @@ export const MARGIN_L = 60
 export const MARGIN_R = MARGIN_L * 1.5
 // SPAWN TIME
 export const PLANET_SPAWN_TIME = 1.5
-export const UFO_SPAWN_TIME = 3
+export const UFO_SPAWN_TIME = 10
 // LIFE
 export const INITIAL_LIFE = 3
 
