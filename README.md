@@ -45,10 +45,6 @@
    ```
 5. Open the game in your browser at `http://localhost:5173`.
 
-## 🐛 Known Issues
-
-- None reported yet. Feel free to open an issue if you find any bugs!
-
 ## 🤝 Contributions
 
 Contributions are welcome! If you'd like to improve the game, please follow these steps:
