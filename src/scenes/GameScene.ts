@@ -62,9 +62,11 @@ export const GameScene = (k: GameContext): SceneDef => {
         planetsPerSpawn = Math.min(planetsPerSpawn + 1, 5) // Max 5 planets
       }
 
-      // Spawn multiple planets
+      // Spawn multiple planets with staggered timing
       for (let i = 0; i < planetsPerSpawn; i++) {
-        createPlanet(k, k.vec2(getRandomX(), 0), k.choose(PLANET_TYPES), planetSpeed)
+        k.wait(i * 0.321, () => {
+          createPlanet(k, k.vec2(getRandomX(), -50), k.choose(PLANET_TYPES), planetSpeed)
+        })
       }
     })
 
@@ -93,6 +95,7 @@ export const GameScene = (k: GameContext): SceneDef => {
     k.onUpdate("planet", (obj: GameObj) => {
       if (obj.pos.y > k.height()) {
         k.destroy(obj)
+        // Don't count Earth (negative value) as missed
         if (obj.value > 0 && ++missedPlanets === 3) {
           updateLife(-1)
           missedPlanets = 0
