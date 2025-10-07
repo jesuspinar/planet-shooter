@@ -3,6 +3,7 @@ import { GameScene } from "./scenes/GameScene"
 import { GameOverScene } from "./scenes/GameOverScene"
 import { StartScene } from "./scenes/StartScene"
 import kaplay, { KAPLAYCtx } from "kaplay"
+import { InstructionsScene } from "./scenes/InstructionsScene"
 
 export function initGame(): KAPLAYCtx {
   const k = kaplay({
@@ -25,6 +26,7 @@ export function initGame(): KAPLAYCtx {
   k.scene("start", StartScene(k))
   k.scene("game", GameScene(k))
   k.scene("gameOver", GameOverScene(k))
+  k.scene("instructions", InstructionsScene(k))
 
   return k
 }

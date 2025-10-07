@@ -22,3 +22,9 @@ export const PLANET_TYPES: PlanetType[] = [
   { sprite: "uranus", value: 6, color: [209, 231, 231], scale: 0.19 },
   { sprite: "neptune", value: 7, color: [91, 93, 223], scale: 0.18 },
 ]
+
+export const INSTRUCTIONS = [
+  "Shoot with left-click and",
+  "destroy planets to earn points.",
+  "Tip: shooting at the earth damages your life",
+]
