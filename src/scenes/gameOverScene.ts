@@ -13,14 +13,14 @@ export function gameOverScene(k: GameContext) {
     // Game over text
     k.add(
       [
-        k.text("Game Over!"),
+        k.text("GAME OVER!"),
         k.pos(k.width() / 2, k.height() / 2 - 35),
         k.anchor("center"),
       ]
     )
     // Restart button
     const restartButton = k.add([
-      k.text("Restart?", { size: 32 }),
+      k.text("RESTART?", { size: 32 }),
       k.area(),
       k.pos(k.width() / 2, k.height() / 2 + 30),
       k.anchor("center"),
