@@ -20,6 +20,8 @@ export const GameScene = (k: GameContext): SceneDef => {
     let missedPlanets = 0
     let planetSpeed = INITIAL_PLANET_SPEED
     let ufoSpeed = INITIAL_UFO_SPEED
+    let planetsPerSpawn = 1
+    let spawnCounter = 0
 
     // Initialize score and life displays
     k.score = k.add([
@@ -53,7 +55,17 @@ export const GameScene = (k: GameContext): SceneDef => {
     // Spawn loops
     k.loop(PLANET_SPAWN_TIME, () => {
       planetSpeed += PLANET_SPEED_INCREMENT
-      createPlanet(k, k.vec2(getRandomX(), 0), k.choose(PLANET_TYPES), planetSpeed)
+
+      // Increase planets per spawn every 10 cycles
+      spawnCounter++
+      if (spawnCounter % 10 === 0) {
+        planetsPerSpawn = Math.min(planetsPerSpawn + 1, 5) // Max 5 planets
+      }
+
+      // Spawn multiple planets
+      for (let i = 0; i < planetsPerSpawn; i++) {
+        createPlanet(k, k.vec2(getRandomX(), 0), k.choose(PLANET_TYPES), planetSpeed)
+      }
     })
 
     k.loop(UFO_SPAWN_TIME, () => {
@@ -81,7 +93,7 @@ export const GameScene = (k: GameContext): SceneDef => {
     k.onUpdate("planet", (obj: GameObj) => {
       if (obj.pos.y > k.height()) {
         k.destroy(obj)
-        if (++missedPlanets === 3) {
+        if (obj.value > 0 && ++missedPlanets === 3) {
           updateLife(-1)
           missedPlanets = 0
         }
