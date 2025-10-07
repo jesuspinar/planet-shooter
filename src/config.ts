@@ -1,4 +1,4 @@
-import { PlanetType } from "./types/planetType"
+import { PlanetType } from "./types/PlanetType"
 // SPEED
 export const INITIAL_PLANET_SPEED = 120
 export const INITIAL_UFO_SPEED = 180

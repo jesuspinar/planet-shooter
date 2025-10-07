@@ -1,6 +1,7 @@
-import { GameContext } from "../types/gameContext"
+import { SceneDef } from "kaplay"
+import { GameContext } from "../types/GameContext"
 
-export function gameOverScene(k: GameContext) {
+export const GameOverScene = (k: GameContext): SceneDef => {
   return (score: number) => {
     // Score text
     k.add(

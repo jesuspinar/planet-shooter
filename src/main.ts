@@ -1,7 +1,7 @@
-import { gameScene } from "./scenes/gameScene"
-import { GameContext } from "./types/gameContext"
-import { gameOverScene } from "./scenes/gameOverScene"
-import { startScene } from "./scenes/startScene"
+import { GameContext } from "./types/GameContext"
+import { GameScene } from "./scenes/GameScene"
+import { GameOverScene } from "./scenes/GameOverScene"
+import { StartScene } from "./scenes/StartScene"
 import kaplay, { KAPLAYCtx } from "kaplay"
 
 export function initGame(): KAPLAYCtx {
@@ -22,9 +22,9 @@ export function initGame(): KAPLAYCtx {
   k.loadSprite("venus", "/planet-shooter/sprites/venus.png")
 
   // Add scenes
-  k.scene("start", () => startScene(k))
-  k.scene("game", () => gameScene(k))
-  k.scene("gameOver", gameOverScene(k))
+  k.scene("start", StartScene(k))
+  k.scene("game", GameScene(k))
+  k.scene("gameOver", GameOverScene(k))
 
   return k
 }

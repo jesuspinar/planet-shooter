@@ -1,9 +1,9 @@
 
 import { GameObj, Vec2 } from "kaplay"
-import { GameContext } from "../types/gameContext"
-import { PlanetType } from "../types/planetType"
+import { GameContext } from "../types/GameContext"
+import { PlanetType } from "../types/PlanetType"
 
-export function createPlanet(k: GameContext, pos: Vec2, type: PlanetType, speed: number): GameObj {
+export const createPlanet = (k: GameContext, pos: Vec2, type: PlanetType, speed: number): GameObj => {
   return k.add(
     [
       k.sprite(type.sprite),
