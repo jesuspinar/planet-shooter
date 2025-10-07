@@ -21,7 +21,7 @@ export const GameOverScene = (k: GameContext): SceneDef => {
     )
     // Restart button
     const restartButton = k.add([
-      k.text("RESTART?", { size: 32 }),
+      k.text("RESTART", { size: 32 }),
       k.area(),
       k.pos(k.width() / 2, k.height() / 2 + 30),
       k.anchor("center"),
